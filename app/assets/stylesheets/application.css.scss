@@ -15,5 +15,12 @@
 @import "bootstrap";
 
 body {
-  margin-top: 30px;
+  .header {
+    margin-bottom: 20px;
+
+    h3 {
+      line-height: 40px;
+      padding-bottom: 5px;
+    }
+  }
 }
