@@ -29,6 +29,7 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 group :development do
   gem 'pry'
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'thin'
 end
 
