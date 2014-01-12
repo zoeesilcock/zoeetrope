@@ -15,6 +15,12 @@
 @import "bootstrap";
 
 body {
+  @media (min-width: 768px) {
+    .container {
+      max-width: 730px;
+    }
+  }
+
   .header {
     margin-bottom: 20px;
 
