@@ -1,7 +1,7 @@
 Zoeetrope::Application.routes.draw do
   resource :session do
     post :create
-    delete :destroy
+    get :destroy
   end
 
   get 'home/index'
