@@ -13,6 +13,7 @@ en:
       submit: "Save project"
     project:
       more-details: "More details"
+      edit: "Edit project"
   contact:
     index:
       title: "Contact me"
