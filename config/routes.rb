@@ -1,7 +1,6 @@
 Zoeetrope::Application.routes.draw do
-  get "contact/index"
-  get "projects/index"
-  get "projects/show"
   get "home/index"
+  resources :projects, only: [:index, :show]
+  get "contact/index"
   root 'home#index'
 end
