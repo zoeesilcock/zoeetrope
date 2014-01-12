@@ -2,3 +2,9 @@
     <h1><%= t '.title' %></h1>
     <p class="lead"><%= t '.lead_html', github_link: link_to(t('.github-link'), 'https://github.com/zoeesilcock') %></p>
 </div>
+
+<% @projects.each_slice(2) do |row| %>
+    <div class="row">
+        <%= render partial: 'project', collection: row %>
+    </div>
+<% end %>
