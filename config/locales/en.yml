@@ -8,6 +8,9 @@ en:
       title: "Projects"
       lead_html: "This is a list of some of my current and previous projects. Hopefully they will give you a picture of my skills. The repositories reveal a lot about how I actually go about building the general structure and all the way down to the details."
       github-link: "Github"
+      new-project: "New project"
+    form:
+      submit: "Save project"
     project:
       more-details: "More details"
   contact:

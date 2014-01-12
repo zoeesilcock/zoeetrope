@@ -5,6 +5,12 @@
         <%= t '.github-link' %>
         <i class="glyphicon glyphicon-chevron-right"></i>
     <% end %>
+    <% if logged_in? %>
+        <%= link_to new_project_path, class: 'btn btn-default btn-lg' do %>
+            <%= t '.new-project' %>
+            <i class="glyphicon glyphicon-plus"></i>
+        <% end %>
+    <% end %>
 </div>
 
 <% @projects.each_slice(2) do |row| %>
