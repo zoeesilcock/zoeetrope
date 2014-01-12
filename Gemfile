@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'sorcery'
 
 group :development do
   gem 'pry'

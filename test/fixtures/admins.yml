@@ -1,0 +1,5 @@
+zoee: 
+  id: 1
+  email: 'mrzoee@gmail.com'
+  salt: <%= salt = 'foo' %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt('passwd', salt) %>

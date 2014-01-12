@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140111203932) do
+ActiveRecord::Schema.define(version: 20140112130415) do
+
+  create_table "admins", force: true do |t|
+    t.string   "email",            null: false
+    t.string   "crypted_password", null: false
+    t.string   "salt",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
 
   create_table "projects", force: true do |t|
     t.string   "title"
