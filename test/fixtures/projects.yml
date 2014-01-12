@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  title: Reddit Hover Text
+  intro: Chrome extension that displays the contents of Reddit text submissions in a box under the link when you hover on the link. Does the same thing Hover Zoom does for images but for text submissions. Very convenient if you read a lot of self subreddits.
+  description: I wrote this for my own convenience when browsing primarily text based subreddits. It uses the Chrome Extension API to modify the behavior of reddit. I fetch the full text of the post via the Reddit API and display it in a box under the link similar to what you get when you press the [Aa+] button displayed on text posts.
+  license: GPL v3
+  repository: https://github.com/zoeesilcock/Reddit-Hover-Text
+
+two:
+  id: 2
+  title: JS Log
+  intro: A simple Android application I made to help with web development when the Android platform is one of your targets. On iOS you can easilty debug JavaScript by enabling the developer tools for Safari. JS Log aims to emulate this behavior on the Android by using the notification area to display JavaScript messages.
+  description: |
+    This is one of my first attempts at Android development and it was in reaction to an actual need. In the process of making web apps targeted at the smartphone market I found it annoying to have to use USB debugging when I needed to see why the JavaScript had failed on Android. Running web apps on Android has it's little quirks that require you to keep an eye on the JavaScript messages, one example that comes to mind is the Web SQL API which is somewhat stricter on Android.
+
+    The first version appears to be fully usable on the devices that I have tested it on. That being said Android has a large variation in both hardware and software so I expect to hear from users with phones that I haven't been able to test on. Please let me know if you have any issues when running JS Log on your device.
+
+    There are a couple of things that I am considering for future versions. I am mainly concerned with handling the large amount of notifications that can come out of certain web apps. I might add easier ways to remove single and multiple notifications and probably an automatic removal of the oldest notifications once we reach the maximum limit. I am also considering adding a dedicated GUI for displaying the list of messages for those who don't want to saturate their notification area with JavaScript messages. I am open to suggestions so please let me know if you have any ideas for improvement.
+  license: GPL v3
+  repository: https://github.com/zoeesilcock/JS-log
