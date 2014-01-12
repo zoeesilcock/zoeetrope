@@ -6,6 +6,6 @@
 	<%= link_to t('.projects'), projects_path %>
     <% end %>
     <%= content_tag :li, :class => controller?('contact') ? 'active' : '' do %>
-	<%= link_to t('.contact'), contact_index_path %>
+	<%= link_to t('.contact'), contact_path %>
     <% end %>
 </ul>
