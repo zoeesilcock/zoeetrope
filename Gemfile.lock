@@ -149,6 +149,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 4.0.0)
   jquery-rails
+  minitest
   pry
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
