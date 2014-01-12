@@ -14,6 +14,7 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   extend MiniTest::Spec::DSL
+  include Sorcery::TestHelpers::Rails
 
   register_spec_type self do |desc|
     desc < ActiveRecord::Base if desc.is_a? Class
