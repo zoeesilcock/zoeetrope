@@ -34,6 +34,8 @@ end
 
 group :test do
   gem 'minitest'
+  gem 'autotest'
+  gem 'autotest-rails'
 end
 
 group :doc do
