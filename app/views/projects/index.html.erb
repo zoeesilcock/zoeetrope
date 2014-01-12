@@ -1,6 +1,10 @@
 <div class="jumbotron">
     <h1><%= t '.title' %></h1>
-    <p class="lead"><%= t '.lead_html', github_link: link_to(t('.github-link'), 'https://github.com/zoeesilcock') %></p>
+    <p class="lead"><%= t '.lead_html' %></p>
+    <%= link_to 'https://github.com/zoeesilcock', class: 'btn btn-success btn-lg' do %>
+        <%= t '.github-link' %>
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    <% end %>
 </div>
 
 <% @projects.each_slice(2) do |row| %>
