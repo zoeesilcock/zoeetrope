@@ -2,7 +2,7 @@ en:
   home:
     index:
       title: "Welcome!"
-      lead: "This is my little corner of this wonderous thing that we call the internet."
+      lead: "This is my little corner of this wonderous thing that we call the internet. I am a programmer living in Stockholm Sweden. I have plenty of experience in most aspects of web development but I mainly focus on Ruby, Rails and JavaScript."
   projects:
     index:
       title: "Projects"
