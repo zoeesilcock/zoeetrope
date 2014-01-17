@@ -33,4 +33,13 @@ describe Project do
     assert project.valid?, 'Not valid with a license.'
     assert_equal project.license, license
   end
+
+  let(:url) { 'http://foo.bar/download' }
+
+  it 'accepts a download url in the form of a string' do
+    project = Project.new valid_params.merge(download_url: url)
+
+    assert project.valid?, 'Not valid with a download url.'
+    assert_equal project.download_url, url
+  end
 end

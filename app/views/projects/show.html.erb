@@ -9,6 +9,12 @@
 		<i class="glyphicon glyphicon-chevron-right"></i>
 	    <% end %>
 	<% end %>
+	<% unless @project.download_url.blank? %>
+	    <%= link_to @project.download_url, class: 'btn btn-success' do %>
+		<%= t('.download') %>
+		<i class="glyphicon glyphicon-chevron-right"></i>
+	    <% end %>
+	<% end %>
     </p>
 </div>
 <p><%= simple_format @project.description %></p>

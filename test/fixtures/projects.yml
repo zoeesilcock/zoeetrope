@@ -7,6 +7,7 @@ one:
   description: I wrote this for my own convenience when browsing primarily text based subreddits. It uses the Chrome Extension API to modify the behavior of reddit. I fetch the full text of the post via the Reddit API and display it in a box under the link similar to what you get when you press the [Aa+] button displayed on text posts.
   license: GPL v3
   repository: https://github.com/zoeesilcock/Reddit-Hover-Text
+  download_url: https://chrome.google.com/webstore/detail/reddit-hover-text/phhpajlkjeoakfmckfnogpnfeidgbhil/details
 
 two:
   id: 2
@@ -20,3 +21,4 @@ two:
     There are a couple of things that I am considering for future versions. I am mainly concerned with handling the large amount of notifications that can come out of certain web apps. I might add easier ways to remove single and multiple notifications and probably an automatic removal of the oldest notifications once we reach the maximum limit. I am also considering adding a dedicated GUI for displaying the list of messages for those who don't want to saturate their notification area with JavaScript messages. I am open to suggestions so please let me know if you have any ideas for improvement.
   license: GPL v3
   repository: https://github.com/zoeesilcock/JS-log
+  download_url: https://market.android.com/details?id=com.zoeetrope.jslog
