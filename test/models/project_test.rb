@@ -24,4 +24,13 @@ describe Project do
     refute project.valid?, 'Not valid without a intro.'
     assert project.errors[:intro], 'Missing error when without intro.'
   end
+
+  let(:license) { 'GPL v3' }
+
+  it 'accepts a license in the form of a string' do
+    project = Project.new valid_params.merge(license: license)
+
+    assert project.valid?, 'Not valid with a license.'
+    assert_equal project.license, license
+  end
 end
