@@ -2,6 +2,7 @@
     <h1><%= @project.title %></h1>
     <p><%= @project.intro %></p>
     <p>
+	<span class="pull-right"><%= @project.license %></span>
 	<% unless @project.repository.blank? %>
 	    <%= link_to @project.repository, class: 'btn btn-success' do %>
 		<%= t('.repository') %>
