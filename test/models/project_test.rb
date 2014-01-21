@@ -34,6 +34,15 @@ describe Project do
     assert_equal project.license, license
   end
 
+  let(:repository) { 'http://github.com/foo/bar' }
+
+  it 'accepts a repository url in the form of a string' do
+    project = Project.new valid_params.merge(repository: repository)
+
+    assert project.valid?, 'Not valid with a repository url.'
+    assert_equal project.repository, repository
+  end
+
   let(:url) { 'http://foo.bar/download' }
 
   it 'accepts a download url in the form of a string' do
