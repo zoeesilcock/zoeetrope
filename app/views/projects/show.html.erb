@@ -17,4 +17,16 @@
 	<% end %>
     </p>
 </div>
-<p><%= simple_format @project.description %></p>
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+	<%= simple_format @project.description %>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+	<h4><%= t '.technologies' %></h4>
+	<ul>
+	<% @project.used_technologies.each do |ut| %>
+	    <li><%= ut.technology.title %></li>
+	<% end %>
+	</ul>
+    </div>
+</div>

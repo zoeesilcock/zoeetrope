@@ -12,6 +12,7 @@ en:
     show:
       repository: "Repository"
       download: "Dowload"
+      technologies: "Technologies"
     form:
       submit: "Save project"
     project:
