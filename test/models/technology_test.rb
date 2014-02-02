@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe Technology do
   def valid_params
-    { title: 'JavaScript' }
+    { title: 'Ruby' }
   end
 
   it 'is valid with a title' do
@@ -17,5 +17,13 @@ describe Technology do
 
     refute technology.valid?, 'Valid without a title.'
     assert technology.errors[:title], 'Missing error when without title.'
+  end
+
+  it 'must have a unique title' do
+    existing_title = Technology.all.first.title
+    technology = Technology.new title: existing_title
+
+    refute technology.valid?, 'Valid with duplicate title.'
+    assert technology.errors[:title], 'Missing error with dublicate title.'
   end
 end
