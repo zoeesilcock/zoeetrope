@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202165617) do
+ActiveRecord::Schema.define(version: 20140202172758) do
 
   create_table "admins", force: true do |t|
     t.string   "email",            null: false
@@ -39,5 +39,16 @@ ActiveRecord::Schema.define(version: 20140202165617) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "used_technologies", force: true do |t|
+    t.integer  "project_id"
+    t.integer  "technology_id"
+    t.integer  "sort_order",    default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "used_technologies", ["project_id"], name: "index_used_technologies_on_project_id"
+  add_index "used_technologies", ["technology_id"], name: "index_used_technologies_on_technology_id"
 
 end
