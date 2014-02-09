@@ -1,4 +1,5 @@
 #= require backbone-rails
+#= require jquery.sortable
 #= require templates/technologies
 
 jQuery ->
@@ -13,6 +14,7 @@ jQuery ->
   class EditTechView extends Backbone.View
     template: JST["templates/technologies"]
     el: '#technologies-form'
+    list: 'ol.technologies'
     initialize: ->
       _.bindAll @, 'render'
 
@@ -24,5 +26,10 @@ jQuery ->
 
     render: ->
       $(@el).html(@template(technologies: @collection.toJSON()))
+      @$(@list).sortable(onDrop: @saveOrder)
+
+    saveOrder: ($item, container, _super)->
+      _super($item, container)
+      console.log('order is restored!')
 
   new EditTechView

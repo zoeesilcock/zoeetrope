@@ -23,7 +23,7 @@
     </div>
     <div class="col-xs-6 col-sm-4">
 	<h4><%= t '.technologies' %></h4>
-	<ul class="technologies">
+	<ol class="technologies">
 	<% @project.used_technologies.each do |ut| %>
 	    <li><h4><span class="label label-primary">
 		<%= ut.technology.title %>

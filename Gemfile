@@ -12,6 +12,7 @@ end
 
 gem 'ejs'
 gem 'jquery-rails'
+gem 'jquery-sortable-rails'
 gem 'backbone-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'sorcery'
