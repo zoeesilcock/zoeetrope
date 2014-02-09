@@ -10,7 +10,9 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0'
 end
 
+gem 'ejs'
 gem 'jquery-rails'
+gem 'backbone-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'sorcery'
 
