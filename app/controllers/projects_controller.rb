@@ -29,6 +29,11 @@ class ProjectsController < ApplicationController
     redirect_to project_path(@project)
   end
 
+  def technologies
+    @project = Project.find(params[:project_id])
+    render json: @project.technologies.as_json
+  end
+
   private
 
   def project_params

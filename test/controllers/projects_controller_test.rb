@@ -49,5 +49,10 @@ class ProjectsControllerTest < ActionController::TestCase
       post :create, project: project_attributes.merge(id: 1)
       assert_response :redirect
     end
+
+    it 'gets technologies' do
+      get :technologies, project_id: 1
+      assert_response :success
+    end
   end
 end
