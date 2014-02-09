@@ -15,10 +15,13 @@ jQuery ->
     template: JST["templates/technologies"]
     el: '#technologies-form'
     list: 'ol.technologies'
+    projectId: ->
+      return @$el.data('project-id')
+
     initialize: ->
       _.bindAll @, 'render', 'saveOrder'
 
-      @collection = new Technologies([], projectId: @$el.data('project-id'))
+      @collection = new Technologies([], projectId: @projectId())
       @collection.fetch()
       @collection.bind 'add', @render
 
@@ -34,7 +37,10 @@ jQuery ->
       order = _.map @$(@list).find('li'), (item)->
         return $(item).data('id')
 
-      console.log(JSON.stringify(order))
-      console.log('orders received!')
+      $.ajax(
+        url: '/projects/' + @projectId() + '/technologies_order',
+        type: 'PUT'
+        data: order: order
+      )
 
   new EditTechView

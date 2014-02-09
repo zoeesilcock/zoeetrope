@@ -3,7 +3,9 @@
 one:
   project_id: 1
   technology_id: 1
+  sort_order: 0
 
 two:
   project_id: 1
   technology_id: 2
+  sort_order: 0

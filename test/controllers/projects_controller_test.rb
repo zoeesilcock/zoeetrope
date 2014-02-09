@@ -54,5 +54,15 @@ class ProjectsControllerTest < ActionController::TestCase
       get :technologies, project_id: 1
       assert_response :success
     end
+
+    it 'can changes the order of technologies' do
+      put :technologies_order, project_id: 1, order: [2,1]
+      assert_response :success
+
+      project = Project.find 1
+      assert_equal 2, project.technologies.first.id
+      assert_equal 1, project.technologies.last.id
+    end
+
   end
 end

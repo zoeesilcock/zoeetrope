@@ -16,8 +16,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create project_params
-    redirect_to project_path(@project)
+    project = Project.create project_params
+    redirect_to project_path(project)
   end
 
   def edit
@@ -25,13 +25,24 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @project = Project.update_attributes project_params
-    redirect_to project_path(@project)
+    project = Project.update_attributes project_params
+    redirect_to project_path(project)
   end
 
   def technologies
-    @project = Project.find(params[:project_id])
-    render json: @project.technologies.as_json
+    project = Project.find(params[:project_id])
+    render json: project.technologies.as_json
+  end
+
+  def technologies_order
+    project = Project.find(params[:project_id])
+
+    params[:order].each_with_index do |id, order|
+      used_technology = project.used_technologies.where(technology_id: id).first
+      used_technology.update_attributes(sort_order: order)
+    end
+
+    render json: { success: true }
   end
 
   private
