@@ -1,6 +1,6 @@
 <ol class="technologies edit">
   <% _.each(technologies, function(technology) { %>
-    <li>
+    <li data-id="<%= technology.id %>">
       <span class="label label-primary">
         <%= technology.title %>
       </span>

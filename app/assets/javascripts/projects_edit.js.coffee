@@ -16,7 +16,7 @@ jQuery ->
     el: '#technologies-form'
     list: 'ol.technologies'
     initialize: ->
-      _.bindAll @, 'render'
+      _.bindAll @, 'render', 'saveOrder'
 
       @collection = new Technologies([], projectId: @$el.data('project-id'))
       @collection.fetch()
@@ -30,6 +30,11 @@ jQuery ->
 
     saveOrder: ($item, container, _super)->
       _super($item, container)
-      console.log('order is restored!')
+
+      order = _.map @$(@list).find('li'), (item)->
+        return $(item).data('id')
+
+      console.log(JSON.stringify(order))
+      console.log('orders received!')
 
   new EditTechView
