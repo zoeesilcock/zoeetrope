@@ -1,9 +1,7 @@
-<ol class="technologies edit">
-  <% _.each(technologies, function(technology) { %>
-    <li data-id="<%= technology.id %>">
-      <span class="label label-primary">
-        <%= technology.title %>
-      </span>
-    </li>
-  <% }); %>
-</ul>
+<% _.each(technologies, function(technology) { %>
+  <li data-id="<%= technology.id %>">
+    <span class="label label-primary">
+      <%= technology.title %>
+    </span>
+  </li>
+<% }); %>

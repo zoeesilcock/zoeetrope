@@ -13,7 +13,7 @@ jQuery ->
 
   class EditTechView extends Backbone.View
     template: JST["templates/technologies"]
-    el: '#technologies-form'
+    el: 'ol.technologies'
     projectId: -> @$el.data('project-id')
 
     initialize: ->
@@ -27,14 +27,12 @@ jQuery ->
 
     render: ->
       @$el.html(@template(technologies: @collection.toJSON()))
-      @$list = @$('ol.technologies')
-
-      @$list.sortable onDrop: ($item, container, _super)=>
+      @$el.sortable onDrop: ($item, container, _super)=>
         _super($item, container)
         @saveOrder()
 
     saveOrder: ->
-      order = _.map @$list.find('li'), (item)->
+      order = _.map @$el.find('li'), (item)->
         return $(item).data('id')
 
       $.ajax
