@@ -29,6 +29,17 @@ class ProjectsController < ApplicationController
     redirect_to project_path(project)
   end
 
+  def technology
+    technology = Technology.find_or_create_by(title: params[:title])
+    used_technology = UsedTechnology.new(technology: technology, project_id: params[:project_id])
+
+    if used_technology.save
+      render json: technology.to_json
+    else
+      render json: used_technology.errors, :status => 422
+    end
+  end
+
   def technologies
     project = Project.find(params[:project_id])
     render json: project.technologies.as_json

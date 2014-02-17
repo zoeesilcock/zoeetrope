@@ -1,3 +1,4 @@
+<ol class="technologies edit">
 <% _.each(technologies, function(technology) { %>
   <li data-id="<%= technology.id %>">
     <span class="label label-primary">
@@ -5,3 +6,7 @@
     </span>
   </li>
 <% }); %>
+</ol>
+<div class="form-group">
+  <input type="text" name="new-technology" class="form-control input-sm new" placeholder="Add technology"/>
+</div>

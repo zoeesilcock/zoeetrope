@@ -50,6 +50,22 @@ class ProjectsControllerTest < ActionController::TestCase
       assert_response :redirect
     end
 
+    describe 'add technology' do
+      it 'creates a technology if a new title is posted' do
+        assert_difference 'Technology.count', 1 do
+          post :technology, project_id: 1, title: 'Ruby'
+        end
+      end
+
+      it 'uses an existing technology if an existing title is posted' do
+        Technology.create(title: 'Ruby')
+
+        assert_difference 'Technology.count', 0 do
+          post :technology, project_id: 1, title: 'Ruby'
+        end
+      end
+    end
+
     it 'gets technologies' do
       get :technologies, project_id: 1
       assert_response :success

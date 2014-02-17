@@ -4,6 +4,9 @@
 
 jQuery ->
   class Technology extends Backbone.Model
+    url: ->
+      '/projects/' + @get('project_id') + '/technology'
+
   class Technologies extends Backbone.Collection
     initialize: (models, options)->
       @projectId = options.projectId
@@ -13,11 +16,14 @@ jQuery ->
 
   class EditTechView extends Backbone.View
     template: JST["templates/technologies"]
-    el: 'ol.technologies'
+    el: 'div.technologies-form'
+    events: {
+      'keyup input.new': 'submitNew'
+    },
     projectId: -> @$el.data('project-id')
 
     initialize: ->
-      _.bindAll @, 'render', 'saveOrder'
+      _.bindAll @, 'render', 'saveOrder', 'submitNew', 'technologySaved'
 
       @collection = new Technologies([], projectId: @projectId())
       @collection.fetch()
@@ -27,12 +33,25 @@ jQuery ->
 
     render: ->
       @$el.html(@template(technologies: @collection.toJSON()))
-      @$el.sortable onDrop: ($item, container, _super)=>
+
+      @$('ol.technologies').sortable onDrop: ($item, container, _super)=>
         _super($item, container)
         @saveOrder()
 
+    submitNew: (e) =>
+      if e.which == 13
+        technology = new Technology({
+          title: $(e.currentTarget).val(),
+          project_id: @projectId()
+        })
+
+        technology.save([], { success: @technologySaved })
+
+    technologySaved: (model) =>
+      @collection.add(model)
+
     saveOrder: ->
-      order = _.map @$el.find('li'), (item)->
+      order = _.map @$('ol.technologies li'), (item)->
         return $(item).data('id')
 
       $.ajax
