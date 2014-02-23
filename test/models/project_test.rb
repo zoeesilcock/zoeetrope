@@ -51,17 +51,4 @@ describe Project do
     assert project.valid?, 'Not valid with a download url.'
     assert_equal project.download_url, url
   end
-
-  let(:technology) { Technology.first }
-
-  it 'accepts multiple technologies' do
-    project = Project.new valid_params
-
-    project.technologies << Technology.all.first
-    project.technologies << Technology.all.second
-    project.save
-
-    assert project.valid?, 'Not valid with technologies.'
-    assert_equal 2, project.technologies.count
-  end
 end

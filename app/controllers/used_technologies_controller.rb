@@ -9,7 +9,7 @@ class UsedTechnologiesController < ApplicationController
 
   def create
     technology = Technology.find_or_create_by(title: params[:title])
-    @used_technology = UsedTechnology.new(technology: technology, project: @project)
+    @used_technology = @project.used_technologies.new(technology: technology)
 
     unless @used_technology.save
       render json: used_technology.errors, :status => 422
