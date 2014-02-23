@@ -18,16 +18,17 @@ jQuery ->
     template: JST["templates/technologies"]
     el: 'div.technologies-form'
     events: {
-      'keyup input.new': 'submitNew'
+      'keyup input.new': 'submitNew',
+      'click i': 'remove'
     },
     projectId: -> @$el.data('project-id')
 
     initialize: ->
-      _.bindAll @, 'render', 'saveOrder', 'submitNew', 'technologySaved'
+      _.bindAll @, 'render', 'saveOrder', 'submitNew', 'technologySaved', 'remove'
 
       @collection = new Technologies([], projectId: @projectId())
       @collection.fetch()
-      @collection.bind 'add', @render
+      @collection.on({ 'add': @render, 'remove': @render })
 
       @render()
 
@@ -49,6 +50,11 @@ jQuery ->
 
     technologySaved: (model) =>
       @collection.add(model)
+
+    remove: (e) =>
+      technologyId = $(e.currentTarget).closest('li').data('id')
+      @collection.get(technologyId).destroy()
+      @collection.remove(technologyId)
 
     saveOrder: ->
       order = _.map @$('ol.technologies li'), (item)->

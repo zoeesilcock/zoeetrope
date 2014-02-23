@@ -4,6 +4,10 @@ ol.technologies {
 
   &.edit li {
     cursor: move!important;
+
+    i {
+      cursor: pointer;
+    }
   }
 
   li.placeholder {
