@@ -6,10 +6,8 @@ Zoeetrope::Application.routes.draw do
 
   get 'home/index'
   resources :projects do
-    get 'technologies'
-    post 'technology'
-    delete 'destroy_technology'
-    put 'technologies_order'
+    resources :used_technologies, only: %w[index create destroy]
+    put 'used_technologies/sort', controller: :used_technologies, as: :sort_technologies
   end
   get 'contact', to: 'contact#index'
   root 'home#index'

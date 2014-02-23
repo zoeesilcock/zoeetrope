@@ -4,14 +4,14 @@
 
 jQuery ->
   class Technology extends Backbone.Model
-    url: ->
-      '/projects/' + @get('project_id') + '/technology'
+    urlRoot: ->
+      '/projects/' + @get('project_id') + '/used_technologies'
 
   class Technologies extends Backbone.Collection
     initialize: (models, options)->
       @projectId = options.projectId
     url: ->
-      '/projects/' + @projectId + '/technologies'
+      '/projects/' + @projectId + '/used_technologies'
     model: Technology
 
   class EditTechView extends Backbone.View
@@ -55,7 +55,7 @@ jQuery ->
         return $(item).data('id')
 
       $.ajax
-        url: '/projects/' + @projectId() + '/technologies_order',
+        url: '/projects/' + @projectId() + '/used_technologies/sort',
         type: 'PUT'
         data: order: order
 

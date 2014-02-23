@@ -49,44 +49,5 @@ class ProjectsControllerTest < ActionController::TestCase
       post :create, project: project_attributes.merge(id: 1)
       assert_response :redirect
     end
-
-    describe 'add technology' do
-      it 'creates a technology if a new title is posted' do
-        assert_difference 'Technology.count', 1 do
-          post :technology, project_id: 1, title: 'Ruby'
-        end
-      end
-
-      it 'uses an existing technology if an existing title is posted' do
-        Technology.create(title: 'Ruby')
-
-        assert_difference 'Technology.count', 0 do
-          post :technology, project_id: 1, title: 'Ruby'
-        end
-      end
-    end
-
-    it 'gets technologies' do
-      get :technologies, project_id: 1
-      assert_response :success
-    end
-
-    it 'can destroy a technology' do
-      project = Project.find 1
-
-      assert_difference 'project.technologies.count', -1 do
-        delete :destroy_technology, project_id: project.id, technology_id: project.technologies.first.id
-      end
-    end
-
-    it 'can changes the order of technologies' do
-      put :technologies_order, project_id: 1, order: [2,1]
-      assert_response :success
-
-      project = Project.find 1
-      assert_equal 2, project.technologies.first.id
-      assert_equal 1, project.technologies.last.id
-    end
-
   end
 end
