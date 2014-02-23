@@ -8,6 +8,7 @@ Zoeetrope::Application.routes.draw do
   resources :projects do
     get 'technologies'
     post 'technology'
+    delete 'destroy_technology'
     put 'technologies_order'
   end
   get 'contact', to: 'contact#index'

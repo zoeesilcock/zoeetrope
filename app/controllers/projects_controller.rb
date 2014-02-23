@@ -40,6 +40,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy_technology
+    project = Project.find(params[:project_id])
+
+    project.used_technologies.where(technology_id: params[:technology_id]).first.destroy
+    render json: { success: true }
+  end
+
   def technologies
     project = Project.find(params[:project_id])
     render json: project.technologies.as_json

@@ -71,6 +71,14 @@ class ProjectsControllerTest < ActionController::TestCase
       assert_response :success
     end
 
+    it 'can destroy a technology' do
+      project = Project.find 1
+
+      assert_difference 'project.technologies.count', -1 do
+        delete :destroy_technology, project_id: project.id, technology_id: project.technologies.first.id
+      end
+    end
+
     it 'can changes the order of technologies' do
       put :technologies_order, project_id: 1, order: [2,1]
       assert_response :success
