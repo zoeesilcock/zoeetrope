@@ -16,6 +16,8 @@ gem 'jquery-sortable-rails'
 gem 'backbone-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'sorcery'
+gem 'rabl'
+gem 'oj'
 
 group :development do
   gem 'pry'
