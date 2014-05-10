@@ -11,9 +11,16 @@
   <%= favicon_link_tag %>
 </head>
 <body>
+    <header class="container">
+      <h3 class="text-muted pull-left">zoeetrope.com</h3>
+      <%= render :partial => 'shared/navbar' %>
+    </header>
+
     <div class="container">
-	<%= render :partial => 'shared/header' %>
 	<%= yield %>
     </div>
+
+    <footer>
+    </footer>
 </body>
 </html>
