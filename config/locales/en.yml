@@ -23,6 +23,7 @@ en:
   contact:
     index:
       title: "Contact me"
+      lead: "Feel free to get in touch with me in any of the following ways."
       email: "E-mail"
       twitter: "Twitter"
       skype: "Skype"

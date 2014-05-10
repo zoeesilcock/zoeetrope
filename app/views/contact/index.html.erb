@@ -1,23 +1,25 @@
 <div class="jumbotron">
     <h1><%= t '.title' %></h1>
-    <div class="row">
-	<div class="col-md-8">
-	    <h3><%= t '.email' %></h2>
-	    <%= link_to 'zoee.silcock_at_gmail.com', '#' %>
-	</div>
-	<div class="col-md-4">
-	    <h3><%= t '.twitter' %></h2>
-	    <%= link_to '@zoees', '#' %>
-	</div>
+    <p><%= t '.lead' %></p>
+</div>
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-7">
+	<h3><%= t '.email' %></h2>
+	<%= mail_to 'zoee.silcock@gmail.com', 'zoee.silcock_at_gmail.com' %>
     </div>
-    <div class="row">
-	<div class="col-md-8">
-	    <h3><%= t '.phone' %></h2>
-	    <%= link_to '076-001 65 09', '#' %>
-	</div>
-	<div class="col-md-4">
-	    <h3><%= t '.skype' %></h2>
-	    <%= link_to 'zoee_s', '#' %>
-	</div>
+    <div class="col-md-4">
+	<h3><%= t '.twitter' %></h2>
+	<%= link_to '@zoees', 'https://twitter.com/zoees' %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-1 col-md-7">
+	<h3><%= t '.phone' %></h2>
+	<%= link_to '076-001 65 09', 'tel:0760016509' %>
+    </div>
+    <div class="col-md-4">
+	<h3><%= t '.skype' %></h2>
+	<%= link_to 'zoee_s', 'skype:zoee_s?chat' %>
     </div>
 </div>
