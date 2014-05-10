@@ -21,14 +21,10 @@
     <div class="col-xs-12 col-sm-8">
 	<%= simple_format @project.description %>
     </div>
-    <div class="col-xs-6 col-sm-4">
+    <div class="col-xs-12 col-sm-4">
 	<h4><%= t '.technologies' %></h4>
-	<ol class="technologies">
 	<% @project.used_technologies.each do |ut| %>
-	    <li><h4><span class="label label-primary">
-		<%= ut.technology.title %>
-	    </span></h4></li>
+	    <span class="label label-primary"><%= ut.technology.title %></span>
 	<% end %>
-	</ul>
     </div>
 </div>
