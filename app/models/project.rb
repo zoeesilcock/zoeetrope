@@ -4,4 +4,5 @@ class Project < ActiveRecord::Base
 
   has_many :used_technologies, -> { order('sort_order') }
   has_many :technologies, through: :used_technologies
+  has_many :screenshots, -> { order('sort_order') }
 end
