@@ -19,9 +19,18 @@ en:
       submit: "Save project"
     technologies_form:
       technologies: "Technologies"
+    edit_screenshots:
+      screenshots: "Screenshots"
+      edit: "Edit"
+      remove: "Remove"
+      remove_confirmation: "Are you absolutely sure?"
+      new_screenshot: "New screenshot"
     project:
       more-details: "More details"
       edit: "Edit project"
+  screenshots:
+    form:
+      submit: "Save"
   contact:
     index:
       title: "Contact me"

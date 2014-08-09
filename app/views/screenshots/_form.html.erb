@@ -1,0 +1,19 @@
+<%= form_for @screenshot, html: { role: 'form' } do |f| %>
+    <div class="form-group">
+        <%= f.label :caption %>
+        <%= f.text_field :caption, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :weight %>
+        <%= f.text_field :sort_order, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.file_field :image %>
+    </div>
+
+    <%= f.hidden_field :project_id, value: @project.id %>
+
+    <%= f.submit t('.submit'), class: 'btn btn-default' %>
+<% end %>

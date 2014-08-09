@@ -1,0 +1,15 @@
+<h4><%= t '.screenshots' %></h4>
+
+<ol class="screenshots edit">
+<% @project.screenshots.each do |screenshot| %>
+    <li>
+        <strong><%= screenshot.caption %></strong>
+        <%= image_tag screenshot.image.thumb.url %>
+        <%= link_to t('.edit'), edit_screenshot_path(screenshot), class: 'btn btn-xs btn-default' %>
+        <%= link_to t('.remove'), screenshot_path(screenshot), method: :delete, class: 'btn btn-xs btn-default', data: { confirm: t('.remove_confirmation') } %>
+    </li>
+<% end %>
+</ol>
+
+<h4><%= t '.new_screenshot' %></h4>
+<%= render partial: 'screenshots/form' %>
