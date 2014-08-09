@@ -1,4 +1,4 @@
-zoee: 
+zoee:
   id: 1
   email: 'mrzoee@gmail.com'
   salt: <%= salt = 'foo' %>

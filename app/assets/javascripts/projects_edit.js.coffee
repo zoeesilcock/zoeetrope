@@ -20,8 +20,9 @@ jQuery ->
     events: {
       'keyup input.new': 'submitNew',
       'click i': 'remove'
-    },
+    }
     projectId: -> @$el.data('project-id')
+    justSaved: false
 
     initialize: ->
       _.bindAll @, 'render', 'saveOrder', 'submitNew', 'technologySaved', 'remove'
@@ -34,8 +35,10 @@ jQuery ->
 
     render: ->
       @$el.html(@template(technologies: @collection.toJSON()))
+      @$('input.new').focus() if @justSaved
+      @justSaved = false
 
-      @$('ol.technologies').sortable onDrop: ($item, container, _super)=>
+      @$('ol.technologies').sortable onDrop: ($item, container, _super) =>
         _super($item, container)
         @saveOrder()
 
@@ -49,6 +52,7 @@ jQuery ->
         technology.save([], { success: @technologySaved })
 
     technologySaved: (model) =>
+      @justSaved = true
       @collection.add(model)
 
     remove: (e) =>
