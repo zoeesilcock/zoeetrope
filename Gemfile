@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'rails', '4.0.2'
 gem 'sqlite3'
@@ -20,6 +21,7 @@ gem 'rabl'
 gem 'oj'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails-assets-lightbox2'
 
 group :development do
   gem 'pry'

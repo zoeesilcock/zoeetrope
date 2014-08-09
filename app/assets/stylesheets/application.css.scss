@@ -13,6 +13,7 @@
  */
 
 @import "bootstrap";
+@import "lightbox2/css/lightbox";
 
 body {
   @media (min-width: 768px) {
@@ -31,6 +32,12 @@ body {
 
     .nav {
       margin-top: 20px;
+    }
+  }
+
+  .jumbotron {
+    .btn {
+      margin-bottom: 10px;
     }
   }
 

@@ -9,4 +9,12 @@ ol.screenshots {
       margin-bottom: 10px;
     }
   }
+
+  li {
+    text-align: center;
+
+    .caption {
+      font-style: italic;
+    }
+  }
 }

@@ -26,5 +26,17 @@
 	<% @project.used_technologies.each do |ut| %>
 	    <span class="label label-primary"><%= ut.technology.title %></span>
 	<% end %>
+
+	<h4><%= t '.screenshots' %></h4>
+	<ol class="screenshots">
+	    <% @project.screenshots.each do |screenshot| %>
+		<li>
+		    <%= link_to screenshot.image.url, data: { lightbox: 'screenshots', title: screenshot.caption } do %>
+			<%= image_tag screenshot.image.thumb.url, data: { toggle: 'modal', target: '#screenshot-modal', image: screenshot.image.url, caption: screenshot.caption } %>
+		    <% end %>
+		    <p class="caption"><%= screenshot.caption %></p>
+		</li>
+	    <% end %>
+	</ol>
     </div>
 </div>
