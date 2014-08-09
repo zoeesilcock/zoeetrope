@@ -18,6 +18,7 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'sorcery'
 gem 'rabl'
 gem 'oj'
+gem 'carrierwave'
 
 group :development do
   gem 'pry'
