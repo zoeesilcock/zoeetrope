@@ -19,6 +19,7 @@ gem 'sorcery'
 gem 'rabl'
 gem 'oj'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development do
   gem 'pry'
