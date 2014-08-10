@@ -29,21 +29,26 @@
 		<i class="fa fa-pencil"></i>
 	    <% end %>
 	<% end %>
-	<h4><%= t '.technologies' %></h4>
-	<% @project.used_technologies.each do |ut| %>
-	    <span class="label label-primary"><%= ut.technology.title %></span>
+
+	<% if @project.used_technologies.size > 0 %>
+	    <h4><%= t '.technologies' %></h4>
+	    <% @project.used_technologies.each do |ut| %>
+		<span class="label label-primary"><%= ut.technology.title %></span>
+	    <% end %>
 	<% end %>
 
-	<h4><%= t '.screenshots' %></h4>
-	<ol class="screenshots">
-	    <% @project.screenshots.each do |screenshot| %>
-		<li>
-		    <%= link_to screenshot.image.url, data: { lightbox: 'screenshots', title: screenshot.caption } do %>
-			<%= image_tag screenshot.image.thumb.url, data: { toggle: 'modal', target: '#screenshot-modal', image: screenshot.image.url, caption: screenshot.caption } %>
-		    <% end %>
-		    <p class="caption"><%= screenshot.caption %></p>
-		</li>
-	    <% end %>
-	</ol>
+	<% if @project.screenshots.size > 0 %>
+	    <h4><%= t '.screenshots' %></h4>
+	    <ol class="screenshots">
+		<% @project.screenshots.each do |screenshot| %>
+		    <li>
+			<%= link_to screenshot.image.url, data: { lightbox: 'screenshots', title: screenshot.caption } do %>
+			    <%= image_tag screenshot.image.thumb.url, data: { toggle: 'modal', target: '#screenshot-modal', image: screenshot.image.url, caption: screenshot.caption } %>
+			<% end %>
+			<p class="caption"><%= screenshot.caption %></p>
+		    </li>
+		<% end %>
+	    </ol>
+	<% end %>
     </div>
 </div>
