@@ -1,7 +1,10 @@
 .photo {
+  text-align: center;
   font-size: 12px;
   font-style: italic;
+
   img {
     width: 100%;
+    max-width: 290px;
   }
 }
