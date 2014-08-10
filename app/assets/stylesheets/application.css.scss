@@ -12,7 +12,8 @@
  *= require_tree .
  */
 
-@import "bootstrap";
+@import "bootstrap-sass-official";
+@import "fontawesome";
 @import "lightbox2/css/lightbox";
 
 body {
@@ -26,12 +27,24 @@ body {
     margin-bottom: 20px;
 
     h3 {
-      line-height: 40px;
+      line-height: 35px;
       margin-bottom: 0;
+
+      @media (max-width: $screen-xs) {
+        font-size: 20px;
+      }
     }
 
     .nav {
       margin-top: 20px;
+
+      li a span.title {
+        display: none;
+
+        @media (min-width: $screen-xs) {
+          display: inline;
+        }
+      }
     }
   }
 

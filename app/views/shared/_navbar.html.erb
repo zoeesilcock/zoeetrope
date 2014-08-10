@@ -1,11 +1,20 @@
 <ul class="nav nav-pills pull-right">
     <%= content_tag :li, :class => controller?('home') ? 'active' : '' do %>
-	<%= link_to t('.home'), root_path %>
+	<%= link_to root_path do %>
+	    <i class="fa fa-home"></i>
+	    <span class="title"><%= t('.home') %></span>
+	<% end %>
     <% end %>
     <%= content_tag :li, :class => controller?('projects') ? 'active' : '' do %>
-	<%= link_to t('.projects'), projects_path %>
+	<%= link_to projects_path do %>
+	    <i class="fa fa-cogs"></i>
+	    <span class="title"><%= t('.projects') %></span>
+	<% end %>
     <% end %>
     <%= content_tag :li, :class => controller?('contact') ? 'active' : '' do %>
-	<%= link_to t('.contact'), contact_path %>
+	<%= link_to contact_path do %>
+	    <i class="fa fa-phone"></i>
+	    <span class="title"><%= t('.contact') %></span>
+	<% end %>
     <% end %>
 </ul>
