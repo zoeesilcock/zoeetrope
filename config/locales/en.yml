@@ -17,6 +17,7 @@ en:
       repository: "Repository"
       download: "Dowload"
       technologies: "Technologies"
+      edit: "Edit project"
     form:
       submit: "Save project"
     technologies_form:
