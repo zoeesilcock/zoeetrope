@@ -13,8 +13,23 @@
     <% end %>
 </div>
 
-<% @projects.each_slice(2) do |row| %>
+<% @projects[0..1].each_slice(2) do |row| %>
     <div class="row">
         <%= render partial: 'project', collection: row %>
     </div>
 <% end %>
+
+<h3><%= t '.older_projects' %></h3>
+<ol class="older-projects">
+<% @projects[2..-1].each do |project| %>
+    <li>
+        <%= link_to project.title, project_path(project) %>
+        <% if logged_in? %>
+            <%= link_to edit_project_path(project), class: 'btn btn-xs btn-default' do %>
+                <%= t '.edit' %>
+                <i class="fa fa-pencil"></i>
+            <% end %>
+        <% end %>
+    </li>
+<% end %>
+</ol>

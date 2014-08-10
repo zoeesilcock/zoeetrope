@@ -27,3 +27,16 @@ ol.technologies {
     }
   }
 }
+
+ol.older-projects {
+  list-style-type: none;
+  padding-left: 0;
+
+  a {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 12px;
+  }
+}

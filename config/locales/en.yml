@@ -11,6 +11,8 @@ en:
       lead_html: "This is a list of some of my current and previous projects. Hopefully they will give you a picture of my skills. The repositories reveal a lot about how I actually go about building the general structure and all the way down to the details."
       github-link: "Github"
       new-project: "New project"
+      older-projects: "Older projects"
+      edit: "Edit project"
     show:
       repository: "Repository"
       download: "Dowload"
