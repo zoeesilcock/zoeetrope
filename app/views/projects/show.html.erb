@@ -6,13 +6,13 @@
 	<% unless @project.repository.blank? %>
 	    <%= link_to @project.repository, class: 'btn btn-success' do %>
 		<%= t('.repository') %>
-		<i class="glyphicon glyphicon-chevron-right"></i>
+		<i class="fa fa-chevron-right"></i>
 	    <% end %>
 	<% end %>
 	<% unless @project.download_url.blank? %>
 	    <%= link_to @project.download_url, class: 'btn btn-success' do %>
 		<%= t('.download') %>
-		<i class="glyphicon glyphicon-chevron-right"></i>
+		<i class="fa fa-chevron-right"></i>
 	    <% end %>
 	<% end %>
     </p>
