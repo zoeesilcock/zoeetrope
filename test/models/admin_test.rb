@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class AdminTest < ActiveSupport::TestCase
-
   def valid_params
     { email: 'admin@zoeetrope.com' }
   end

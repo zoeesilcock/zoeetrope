@@ -2,8 +2,12 @@ require 'test_helper'
 
 describe Project do
   def valid_params
-    { title: 'Foo', intro: 'Bar' }
+    { title: 'Best project', intro: 'This is the greates and best project in the world... Tribute.' }
   end
+
+  let(:license) { 'GPL v3' }
+  let(:repository) { 'http://github.com/zoeesilcock/best_project' }
+  let(:url) { 'http://zoeetrope.com/download' }
 
   it 'is valid with valid params' do
     project = Project.new valid_params
@@ -25,8 +29,6 @@ describe Project do
     assert project.errors[:intro], 'Missing error when without intro.'
   end
 
-  let(:license) { 'GPL v3' }
-
   it 'accepts a license in the form of a string' do
     project = Project.new valid_params.merge(license: license)
 
@@ -34,16 +36,12 @@ describe Project do
     assert_equal project.license, license
   end
 
-  let(:repository) { 'http://github.com/foo/bar' }
-
   it 'accepts a repository url in the form of a string' do
     project = Project.new valid_params.merge(repository: repository)
 
     assert project.valid?, 'Not valid with a repository url.'
     assert_equal project.repository, repository
   end
-
-  let(:url) { 'http://foo.bar/download' }
 
   it 'accepts a download url in the form of a string' do
     project = Project.new valid_params.merge(download_url: url)
