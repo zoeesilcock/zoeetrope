@@ -51,4 +51,11 @@ describe Project do
     assert project.valid?, 'Not valid with a download url.'
     assert_equal project.download_url, url
   end
+
+  it 'accepts a featured flag in the form of a boolean' do
+    project = Project.new valid_params.merge(featured: true)
+
+    assert project.valid?, 'Not valid with a featured flag.'
+    assert_equal project.featured, true
+  end
 end

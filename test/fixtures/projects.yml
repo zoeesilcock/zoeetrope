@@ -8,6 +8,7 @@ one:
   license: GPL v3
   repository: https://github.com/zoeesilcock/Reddit-Hover-Text
   download_url: https://chrome.google.com/webstore/detail/reddit-hover-text/phhpajlkjeoakfmckfnogpnfeidgbhil/details
+  featured: 1
 
 two:
   id: 2
@@ -22,3 +23,4 @@ two:
   license: GPL v3
   repository: https://github.com/zoeesilcock/JS-log
   download_url: https://market.android.com/details?id=com.zoeetrope.jslog
+  featured: 0
