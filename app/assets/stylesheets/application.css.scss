@@ -52,6 +52,10 @@ body {
   }
 
   .jumbotron {
+    @media (max-width: $screen-xs) {
+      padding: 1px 15px 10px 15px;
+    }
+
     .btn {
       margin-bottom: 10px;
     }
