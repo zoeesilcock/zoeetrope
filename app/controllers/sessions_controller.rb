@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     user = login(params[:email], params[:password])
-    redirect_to root_url
+    redirect_to projects_url
   end
 
   def destroy

@@ -1,6 +1,5 @@
 class UsedTechnologiesController < ApplicationController
 
-  respond_to :json
   before_filter :find_project
 
   def index

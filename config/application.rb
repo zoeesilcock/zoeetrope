@@ -22,5 +22,16 @@ module Zoeetrope
     config.i18n.default_locale = :en
 
     config.assets.precompile = ['*.js', '**/*.js']
+
+    config.generators do |g|
+      g.test_framework :rspec
+      g.integration_tool :rspec
+      g.view_specs false
+      g.routing_specs false
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.factory_girl false
+    end
   end
 end

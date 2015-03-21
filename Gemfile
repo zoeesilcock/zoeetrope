@@ -1,15 +1,8 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
-gem 'rails', '4.0.2'
+gem 'rails'
 gem 'sqlite3'
 gem 'therubyracer', platforms: :ruby
-
-group :assets do
-  gem 'sass-rails', '~> 4.0.0'
-  gem 'uglifier', '>= 1.3.0'
-  gem 'coffee-rails', '~> 4.0.0'
-end
 
 gem 'ejs'
 gem 'jquery-rails'
@@ -20,9 +13,18 @@ gem 'rabl'
 gem 'oj'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'rails-assets-bootstrap-sass-official'
-gem 'rails-assets-lightbox2'
-gem 'rails-assets-fontawesome'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap-sass-official'
+  gem 'rails-assets-lightbox2'
+  gem 'rails-assets-fontawesome'
+end
+
+group :assets do
+  gem 'sass-rails'
+  gem 'uglifier'
+  gem 'coffee-rails'
+end
 
 group :development do
   gem 'pry'
@@ -30,14 +32,10 @@ group :development do
   gem 'binding_of_caller'
   gem 'thin'
   gem 'quiet_assets'
+  gem 'guard-rspec', require: false
 end
 
-group :test do
-  gem 'minitest'
-  gem 'minitest-rails'
-  gem 'autotest'
-  gem 'autotest-rails'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
 end
-
-gem 'unicorn'
-gem 'capistrano', group: :development
