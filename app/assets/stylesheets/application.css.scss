@@ -11,6 +11,10 @@
  *= require_self
  */
 
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
+
 @import "bootstrap-sass-official";
 @import "fontawesome";
 @import "lightbox2/css/lightbox";
