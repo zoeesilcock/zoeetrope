@@ -11,18 +11,17 @@
   <%= favicon_link_tag %>
 </head>
 <body>
-  <div class="header-wrapper">
-    <header class="container">
-      <h3 class="text-muted pull-left">zoeetrope.com</h3>
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header pull-left">
+        <%= link_to 'zoeetrope.com', root_path, class: 'navbar-brand' %>
+      </div>
       <%= render :partial => 'shared/navbar' %>
-    </header>
+    </div>
   </div>
 
   <div class="container">
       <%= yield %>
   </div>
-
-  <footer>
-  </footer>
 </body>
 </html>

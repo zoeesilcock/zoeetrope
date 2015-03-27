@@ -19,8 +19,8 @@
     </div>
 <% end %>
 
-<h3><%= t '.older_projects' %></h3>
-<ol class="older-projects">
+<h3><%= t '.more_projects' %></h3>
+<ol class="more-projects">
 <% @projects.each do |project| %>
     <li>
         <%= link_to project.title, project_path(project) %>
