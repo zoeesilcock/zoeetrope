@@ -2,7 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'sqlite3'
+gem 'mysql2'
 gem 'therubyracer', platforms: :ruby
+
+gem 'puma'
+gem 'mina'
+gem 'mina-puma', require: false
 
 gem 'ejs'
 gem 'jquery-rails'
