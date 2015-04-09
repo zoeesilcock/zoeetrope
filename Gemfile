@@ -13,6 +13,7 @@ gem 'ejs'
 gem 'jquery-rails'
 gem 'jquery-sortable-rails'
 gem 'backbone-rails'
+gem 'font-awesome-sass', '~> 4.3.0'
 gem 'sorcery'
 gem 'rabl'
 gem 'oj'
@@ -22,7 +23,6 @@ gem 'mini_magick'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass-official'
   gem 'rails-assets-lightbox2'
-  gem 'rails-assets-fontawesome'
 end
 
 group :assets do
