@@ -20,7 +20,7 @@ task :setup => :environment do
   queue! %(chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp/pids")
 end
 
-set :shared_paths, ['config/database.yml', 'tmp/pids', 'tmp/sockets']
+set :shared_paths, ['config/database.yml', 'tmp/pids', 'tmp/sockets', 'public/uploads']
 
 task :environment do
   invoke :'rbenv:load'
