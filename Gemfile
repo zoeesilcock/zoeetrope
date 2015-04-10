@@ -19,6 +19,7 @@ gem 'rabl'
 gem 'oj'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'dynamic_sitemaps'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass-official'

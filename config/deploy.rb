@@ -33,6 +33,7 @@ task :deploy => :environment do
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
+    queue! "#{rake} sitemap:generate"
 
     to :launch do
       invoke :'puma:restart'
