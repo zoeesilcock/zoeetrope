@@ -11,6 +11,8 @@
   <%= favicon_link_tag %>
 </head>
 <body>
+  <%= render partial: 'layouts/google_tag_manager' if Rails.env.production? %>
+
   <div class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header pull-left">
