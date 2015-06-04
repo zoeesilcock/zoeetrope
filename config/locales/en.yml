@@ -13,6 +13,7 @@ en:
       github-link: "Github"
       new-project: "New project"
       more_projects: "More projects"
+      drafts: "Drafts"
       edit: "Edit project"
     show:
       repository: "Repository"

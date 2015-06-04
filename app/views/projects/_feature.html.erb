@@ -1,0 +1,11 @@
+<div class="col-md-6 featured-project">
+    <h4><%= feature.title %></h4>
+    <p><%= feature.intro %></p>
+    <%= link_to t('.more-details'), project_path(feature), class: 'btn btn-success btn-sm' %>
+    <% if logged_in? %>
+        <%= link_to edit_project_path(feature), class: 'btn btn-default btn-sm' do %>
+            <%= t '.edit' %>
+            <i class="fa fa-pencil"></i>
+        <% end %>
+    <% end %>
+</div>

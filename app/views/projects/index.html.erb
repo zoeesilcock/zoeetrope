@@ -15,21 +15,16 @@
 
 <% @featured_projects.each_slice(2) do |row| %>
     <div class="row">
-        <%= render partial: 'project', collection: row %>
+        <%= render partial: 'feature', collection: row %>
     </div>
 <% end %>
 
 <h3><%= t '.more_projects' %></h3>
 <ol class="more-projects">
-<% @projects.each do |project| %>
-    <li>
-        <%= link_to project.title, project_path(project) %>
-        <% if logged_in? %>
-            <%= link_to edit_project_path(project), class: 'btn btn-xs btn-default' do %>
-                <%= t '.edit' %>
-                <i class="fa fa-pencil"></i>
-            <% end %>
-        <% end %>
-    </li>
-<% end %>
+    <%= render partial: 'project', collection: @projects %>
+</ol>
+
+<h3><%= t '.drafts' %></h3>
+<ol class="more-projects">
+    <%= render partial: 'project', collection: @drafts %>
 </ol>

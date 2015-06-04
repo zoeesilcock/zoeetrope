@@ -1,11 +1,9 @@
-<div class="col-md-6 featured-project">
-    <h4><%= project.title %></h4>
-    <p><%= project.intro %></p>
-    <%= link_to t('.more-details'), project_path(project), class: 'btn btn-success btn-sm' %>
+<li>
+    <%= link_to project.title, project_path(project) %>
     <% if logged_in? %>
-        <%= link_to edit_project_path(project), class: 'btn btn-default btn-sm' do %>
+        <%= link_to edit_project_path(project), class: 'btn btn-xs btn-default' do %>
             <%= t '.edit' %>
             <i class="fa fa-pencil"></i>
         <% end %>
     <% end %>
-</div>
+</li>

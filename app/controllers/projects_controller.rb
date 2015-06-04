@@ -2,8 +2,9 @@ class ProjectsController < ApplicationController
   before_filter :require_login, except: [:index, :show]
 
   def index
-    @featured_projects = Project.where(featured: true)
-    @projects = Project.where(featured: false)
+    @featured_projects = Project.live.where(featured: true)
+    @projects = Project.live.where(featured: false)
+    @drafts = Project.where(draft: true)
   end
 
   def show
@@ -35,6 +36,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :intro, :description, :license, :repository, :download_url, :featured)
+    params.require(:project).permit(:title, :intro, :description, :license, :repository, :download_url, :featured, :draft)
   end
 end
