@@ -9,6 +9,10 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+
+    if @project.draft && !logged_in?
+      redirect_to projects_path
+    end
   end
 
   # Admin only

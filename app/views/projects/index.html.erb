@@ -24,7 +24,9 @@
     <%= render partial: 'project', collection: @projects %>
 </ol>
 
-<h3><%= t '.drafts' %></h3>
-<ol class="more-projects">
-    <%= render partial: 'project', collection: @drafts %>
-</ol>
+<% if logged_in? %>
+    <h3><%= t '.drafts' %></h3>
+    <ol class="more-projects">
+        <%= render partial: 'project', collection: @drafts %>
+    </ol>
+<% end %>
