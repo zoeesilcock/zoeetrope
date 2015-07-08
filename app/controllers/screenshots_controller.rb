@@ -3,8 +3,13 @@ class ScreenshotsController < ApplicationController
   before_filter :require_login
 
   def create
-    screenshot = Screenshot.create screenshot_params
-    redirect_to edit_project_path(screenshot.project)
+    screenshot = Screenshot.new screenshot_params
+
+    if screenshot.save
+      redirect_to edit_project_path(screenshot.project)
+    else
+      render json: screenshot.errors
+    end
   end
 
   def edit
