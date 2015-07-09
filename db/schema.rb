@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604211622) do
+ActiveRecord::Schema.define(version: 20150709161244) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",            limit: 255, null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150604211622) do
     t.string   "download_url", limit: 255
     t.boolean  "featured",                 default: false
     t.boolean  "draft",                    default: true
+    t.integer  "sort_order"
   end
 
   create_table "screenshots", force: :cascade do |t|

@@ -6,5 +6,5 @@ class Project < ActiveRecord::Base
   has_many :technologies, through: :used_technologies
   has_many :screenshots, -> { order('sort_order') }
 
-  scope :live, -> { where(draft: false) }
+  scope :live, -> { where(draft: false).order('sort_order DESC') }
 end
