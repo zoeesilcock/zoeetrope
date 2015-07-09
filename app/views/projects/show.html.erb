@@ -15,30 +15,25 @@
 		<i class="fa fa-chevron-right"></i>
 	    <% end %>
 	<% end %>
-    </p>
-</div>
-
-<div class="row">
-    <div class="col-xs-12 col-sm-8">
-	<%= simple_format @project.description %>
-    </div>
-    <div class="col-xs-12 col-sm-4">
 	<% if logged_in? %>
-	    <%= link_to edit_project_path(@project), class: 'btn btn-default btn-sm' do %>
+	    <%= link_to edit_project_path(@project), class: 'btn btn-default' do %>
 		<%= t '.edit' %>
 		<i class="fa fa-pencil"></i>
 	    <% end %>
 	<% end %>
-
-	<% if @project.used_technologies.size > 0 %>
-	    <h4><%= t '.technologies' %></h4>
+    </p>
+    <% if @project.used_technologies.size > 0 %>
+	<div>
 	    <% @project.used_technologies.each do |ut| %>
 		<span class="label label-primary"><%= ut.technology.title %></span>
 	    <% end %>
-	<% end %>
+	</div>
+    <% end %>
+</div>
 
-	<% if @project.screenshots.size > 0 %>
-	    <h4><%= t '.screenshots' %></h4>
+<% if @project.screenshots.size > 0 %>
+    <div class="row">
+	<div class="col-xs-12">
 	    <ol class="screenshots">
 		<% @project.screenshots.each do |screenshot| %>
 		    <li>
@@ -49,6 +44,12 @@
 		    </li>
 		<% end %>
 	    </ol>
-	<% end %>
+	</div>
+    </div>
+<% end %>
+
+<div class="row">
+    <div class="col-xs-12">
+	<%= simple_format @project.description %>
     </div>
 </div>

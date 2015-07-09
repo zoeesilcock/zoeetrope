@@ -12,9 +12,17 @@ ol.screenshots {
 
   li {
     text-align: center;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
 
     .caption {
       font-style: italic;
+      font-size: 12px;
+    }
+
+    img {
+      width: 100px;
     }
   }
 }
