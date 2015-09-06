@@ -32,20 +32,16 @@
 </div>
 
 <% if @project.screenshots.size > 0 %>
-    <div class="row">
-	<div class="col-xs-12">
-	    <ol class="screenshots">
-		<% @project.screenshots.each do |screenshot| %>
-		    <li>
-			<%= link_to screenshot.image.url, data: { lightbox: 'screenshots', title: screenshot.caption } do %>
-			    <%= image_tag screenshot.image.thumb.url, data: { toggle: 'modal', target: '#screenshot-modal', image: screenshot.image.url, caption: screenshot.caption } %>
-			<% end %>
-			<p class="caption"><%= screenshot.caption %></p>
-		    </li>
+    <ol class="screenshots">
+	<% @project.screenshots.each do |screenshot| %>
+	    <li>
+		<%= link_to screenshot.image.url, data: { lightbox: 'screenshots', title: screenshot.caption } do %>
+		    <%= image_tag screenshot.image.thumb.url, data: { toggle: 'modal', target: '#screenshot-modal', image: screenshot.image.url, caption: screenshot.caption } %>
 		<% end %>
-	    </ol>
-	</div>
-    </div>
+		<p class="caption"><%= screenshot.caption %></p>
+	    </li>
+	<% end %>
+    </ol>
 <% end %>
 
 <div class="row">

@@ -3,10 +3,12 @@
 <ol class="screenshots edit">
 <% @project.screenshots.each do |screenshot| %>
     <li>
-        <strong><%= screenshot.caption %></strong>
+        <p><strong><%= screenshot.caption %></strong></p>
         <%= image_tag screenshot.image.thumb.url %>
-        <%= link_to t('.edit'), edit_screenshot_path(screenshot), class: 'btn btn-xs btn-default' %>
-        <%= link_to t('.remove'), screenshot_path(screenshot), method: :delete, class: 'btn btn-xs btn-default', data: { confirm: t('.remove_confirmation') } %>
+        <p>
+            <%= link_to t('.edit'), edit_screenshot_path(screenshot), class: 'btn btn-xs btn-default' %>
+            <%= link_to t('.remove'), screenshot_path(screenshot), method: :delete, class: 'btn btn-xs btn-default', data: { confirm: t('.remove_confirmation') } %>
+        </p>
     </li>
 <% end %>
 </ol>

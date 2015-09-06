@@ -1,6 +1,9 @@
 ol.screenshots {
   list-style-type: none;
   padding-left: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   &.edit li {
     padding-bottom: 10px;
@@ -23,6 +26,8 @@ ol.screenshots {
 
     img {
       width: 100px;
+      margin-bottom: 10px;
     }
   }
 }
+
