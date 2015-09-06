@@ -3,17 +3,17 @@
     <p class="lead"><%= t '.lead' %></p>
 </div>
 
-<div class="row">
-    <div class="col-xs-offset-1 col-xs-11 col-md-offset-1 col-md-4">
-	<h3><%= t '.email' %></h2>
+<div class="contact-container">
+    <div class="contact-item">
+	<h3><%= t '.email' %></h3>
 	<%= mail_to 'zoee.silcock@gmail.com', 'zoee.silcock_at_gmail.com' %>
     </div>
-    <div class="col-xs-offset-1 col-xs-11 col-md-offset-0 col-md-3">
-	<h3><%= t '.twitter' %></h2>
+    <div class="contact-item">
+	<h3><%= t '.twitter' %></h3>
 	<%= link_to '@zoees', 'https://twitter.com/zoees' %>
     </div>
-    <div class="col-xs-offset-1 col-xs-11 col-md-offset-0 col-md-3">
-	<h3><%= t '.phone' %></h2>
+    <div class="contact-item">
+	<h3><%= t '.phone' %></h3>
 	<%= link_to '076-001 65 09', 'tel:0760016509' %>
     </div>
 </div>
