@@ -20,6 +20,7 @@ gem 'oj'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'dynamic_sitemaps'
+gem 'autoprefixer-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass-official'
