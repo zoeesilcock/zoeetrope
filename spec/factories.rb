@@ -7,6 +7,7 @@ FactoryGirl.define do
   factory :project do
     title 'zoeetrope'
     intro 'my homepage'
+    draft false
   end
 
   factory :screenshot do

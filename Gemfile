@@ -24,7 +24,7 @@ gem 'autoprefixer-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass-official'
-  gem 'rails-assets-lightbox2'
+  gem 'rails-assets-lightbox2', '2.7.1'
 end
 
 group :assets do
