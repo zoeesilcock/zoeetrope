@@ -5,6 +5,7 @@ en:
       lead: "This is my little corner of this wonderous thing that we call the internet. I am a programmer living in Stockholm Sweden. I have plenty of experience in most aspects of web development. I mainly focus on Ruby, Rails and JavaScript."
       about_me1: "If you find yourself here you are most likely looking to find out who I am. My name is Zoee Silcock but my friends call me Zilly-Z /zɪli: zi:/ sometimes, I guess that would be my rapper name if I ever get tired of coding. On a more serious note I hope to give you a picture of me by showcasing projects I have worked on in my spare time."
       about_me2: "I am passionate about web development and this ends up being a bit of a playground for me. Here I can test new technologies that I am interested in without the limits usually imposed by having a more strictly defined purpose with the website. This site is open source so you can follow the, somewhat sporadic, development on github."
+      about_me3: "I'm also into game development, I am one of the co-founders of <a href='http://rocketpants.se' target='_blank'>Rocket Pants</a>. Our first, self titled game is available for free on the AppStore."
       favorite_resources: "Favorite resources"
   projects:
     index:
