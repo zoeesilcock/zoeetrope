@@ -69,4 +69,5 @@ jQuery ->
         type: 'PUT'
         data: order: order
 
-  new EditTechView
+  if $('.div.technologies-form').length
+    new EditTechView

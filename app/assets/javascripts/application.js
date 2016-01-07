@@ -13,3 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require lightbox2
+//= require ./home_index
+//= require ./projects_edit
