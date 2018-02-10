@@ -35,17 +35,16 @@ set :forward_agent, true
 task :remote_environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
-  # invoke :'rbenv:load'
+  invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
   # invoke :'rvm:use', 'ruby-1.9.3-p125@default'
-  invoke :'rbenv:load'
 end
 
 # Put any custom commands you need to run at setup
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
-  # command %{rbenv install 2.3.0 --skip-existing}
+  command %{rbenv install 2.5.0 --skip-existing}
 end
 
 task :generate_sitemaps do
